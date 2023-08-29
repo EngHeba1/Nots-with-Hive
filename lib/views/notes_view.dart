@@ -4,6 +4,8 @@ import 'package:note_app/views/widgete/custom_appbar.dart';
 import 'package:note_app/views/widgete/list_view.dart';
 import 'package:note_app/views/widgete/news_item.dart';
 
+import 'edit_view.dart';
+
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
 
@@ -15,7 +17,11 @@ class NotesView extends StatelessWidget {
       floatingActionButton:
           FloatingActionButton(onPressed: () {showModelSheet(context);}, child: Icon(Icons.add)),
       body: Column(
-        children: [CustomAppbar(), Expanded(child: ListViewWidget())],
+        children: [CustomAppbar("Notes",Icon(Icons.search,size: 30,)),
+          Expanded(child: InkWell(onTap:() {
+            Navigator.pushNamed(context, EditView.routName);
+          }
+            ,child: ListViewWidget()))],
       ),
     );
   }

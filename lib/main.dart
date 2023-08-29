@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:note_app/views/edit_view.dart';
 import 'package:note_app/views/notes_view.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class NoteApp extends StatelessWidget {
         initialRoute:NotesView.routName ,
         routes: {
         NotesView.routName : (context) =>  NotesView(),
-
+          EditView.routName : (context) => EditView(),
         });
 
 
