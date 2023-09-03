@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/views/edit_view.dart';
 import 'package:note_app/views/notes_view.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+
   runApp(const NoteApp());
+  Hive.openBox("noteBox");
 }
 
 class NoteApp extends StatelessWidget {
